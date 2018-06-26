@@ -2,18 +2,26 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
   </head>
   <body>
     <a-scene>
       <!-- A few lines to set up the camera -->
-      <a-entity id="cameraWrapper" position="0 0 6">
+      <!--<a-entity id="cameraWrapper" position="0 0 6">
         <a-camera></a-camera>
-      </a-entity>
-
+      </a-entity>*/ -->
       <!--    Code your scene here:    -->
-      <a-sphere position="0 1.25 0" radius="1.25" src="#snow"></a-sphere>
-      <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="20" color="#BDCFE7"></a-plane>
-      <a-sky color="aliceblue"></a-sky>
+      <a-box static-body position="0 -10 0" height="8" depth="3" width="3" color="green"></a-box>
+      <a-box static-body position="7 -10 3" height="2" depth="2" width="2" color="green"></a-box>
+      <a-sky src="images/gardenScene.jpeg"></a-sky>
+      <a-plane static-body position="0 -10 0" color="#aaa" height="100" width="100" rotation="-90 0 0"></a-plane>
+       <a-entity class="player" id="player"
+                camera
+                jump-ability
+                universal-controls
+                kinematic-body
+                position="1 4 2">
+            </a-entity>
     </a-scene>
   </body>
 </html>
